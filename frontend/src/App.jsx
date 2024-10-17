@@ -1,16 +1,18 @@
 import { useState } from 'react'
 import { Button } from './components/ui/button'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import HomePage from './pages/HomePage'
+import ChatPage from './pages/ChatPage'
 
 function App() {
 
   return (
-    <>
-      <div>
-        <p className='text-red-300'>Hello 
-          <Button>New</Button>
-        </p>
-      </div>
-    </>
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<HomePage/>}/>
+      <Route path='/chats' element={<ChatPage/>} />
+    </Routes>
+    </BrowserRouter>
   )
 }
 
